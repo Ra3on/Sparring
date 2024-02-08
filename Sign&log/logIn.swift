@@ -94,7 +94,7 @@ struct ForgotPasswordView: View {
 
 struct MainView: View {
     var body: some View {
-        Text("Main View") // Your main view content goes here
+       MaiView()
     }
 }
 
