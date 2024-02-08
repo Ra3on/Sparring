@@ -15,6 +15,8 @@
 		0786722C2B6AFDA700BC4F8A /* SparringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786722B2B6AFDA700BC4F8A /* SparringTests.swift */; };
 		078672362B6AFDA700BC4F8A /* SparringUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672352B6AFDA700BC4F8A /* SparringUITests.swift */; };
 		078672382B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672372B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift */; };
+		0786724F2B75956B00BC4F8A /* logIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786724E2B75956B00BC4F8A /* logIn.swift */; };
+		078672512B75958900BC4F8A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672502B75958900BC4F8A /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		078672312B6AFDA700BC4F8A /* SparringUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparringUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078672352B6AFDA700BC4F8A /* SparringUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparringUITests.swift; sourceTree = "<group>"; };
 		078672372B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparringUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0786724E2B75956B00BC4F8A /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
+		078672502B75958900BC4F8A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				078672182B6AFDA100BC4F8A /* SparringApp.swift */,
+				0786724E2B75956B00BC4F8A /* logIn.swift */,
+				078672502B75958900BC4F8A /* SignUp.swift */,
 				0786721A2B6AFDA100BC4F8A /* ContentView.swift */,
 				0786721C2B6AFDA100BC4F8A /* Item.swift */,
 				0786721E2B6AFDA600BC4F8A /* Assets.xcassets */,
@@ -263,6 +269,8 @@
 				0786721B2B6AFDA100BC4F8A /* ContentView.swift in Sources */,
 				0786721D2B6AFDA100BC4F8A /* Item.swift in Sources */,
 				078672192B6AFDA100BC4F8A /* SparringApp.swift in Sources */,
+				0786724F2B75956B00BC4F8A /* logIn.swift in Sources */,
+				078672512B75958900BC4F8A /* SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
