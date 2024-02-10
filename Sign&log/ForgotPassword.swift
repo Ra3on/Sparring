@@ -57,6 +57,24 @@ struct EmailButton: View {
         }
     }
 }
+struct NewPasswordFields: View {
+    @Binding var newPassword: String
+    @Binding var confirmPassword: String
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            SecureField("New Password", text: $newPassword)
+                .padding()
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(10)
+            
+            SecureField("Confirm Password", text: $confirmPassword)
+                .padding()
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(10)
+        }
+    }
+}
 
 struct CancelButton: View {
     var body: some View {
@@ -69,6 +87,7 @@ struct CancelButton: View {
         }
     }
 }
+
 
 
 struct EView: View {

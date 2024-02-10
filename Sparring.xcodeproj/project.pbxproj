@@ -19,6 +19,10 @@
 		078672512B75958900BC4F8A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672502B75958900BC4F8A /* SignUp.swift */; };
 		078672552B7596AA00BC4F8A /* UsersMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672542B7596AA00BC4F8A /* UsersMainView.swift */; };
 		078672572B75B38E00BC4F8A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672562B75B38E00BC4F8A /* ForgotPassword.swift */; };
+		078672592B77709400BC4F8A /* cred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672582B77709400BC4F8A /* cred.swift */; };
+		0786725C2B7774B600BC4F8A /* tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786725B2B7774B500BC4F8A /* tabs.swift */; };
+		0786725F2B777BBC00BC4F8A /* Userpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786725E2B777BBC00BC4F8A /* Userpage.swift */; };
+		078672612B77858500BC4F8A /* UserInput .swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672602B77858500BC4F8A /* UserInput .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		078672502B75958900BC4F8A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		078672542B7596AA00BC4F8A /* UsersMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMainView.swift; sourceTree = "<group>"; };
 		078672562B75B38E00BC4F8A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		078672582B77709400BC4F8A /* cred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cred.swift; sourceTree = "<group>"; };
+		0786725B2B7774B500BC4F8A /* tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabs.swift; sourceTree = "<group>"; };
+		0786725E2B777BBC00BC4F8A /* Userpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userpage.swift; sourceTree = "<group>"; };
+		078672602B77858500BC4F8A /* UserInput .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInput .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		0786720C2B6AFDA100BC4F8A = {
 			isa = PBXGroup;
 			children = (
+				0786725A2B77717B00BC4F8A /* credientials */,
 				078672532B75963000BC4F8A /* Main */,
 				078672522B75960400BC4F8A /* Sign&log */,
 				078672172B6AFDA100BC4F8A /* Sparring */,
@@ -154,8 +163,27 @@
 			isa = PBXGroup;
 			children = (
 				078672542B7596AA00BC4F8A /* UsersMainView.swift */,
+				0786725B2B7774B500BC4F8A /* tabs.swift */,
+				0786725D2B777B8200BC4F8A /* User */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0786725A2B77717B00BC4F8A /* credientials */ = {
+			isa = PBXGroup;
+			children = (
+				078672582B77709400BC4F8A /* cred.swift */,
+			);
+			path = credientials;
+			sourceTree = "<group>";
+		};
+		0786725D2B777B8200BC4F8A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0786725E2B777BBC00BC4F8A /* Userpage.swift */,
+				078672602B77858500BC4F8A /* UserInput .swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0786721B2B6AFDA100BC4F8A /* ContentView.swift in Sources */,
+				0786725F2B777BBC00BC4F8A /* Userpage.swift in Sources */,
 				078672552B7596AA00BC4F8A /* UsersMainView.swift in Sources */,
 				0786721D2B6AFDA100BC4F8A /* Item.swift in Sources */,
+				078672592B77709400BC4F8A /* cred.swift in Sources */,
+				078672612B77858500BC4F8A /* UserInput .swift in Sources */,
 				078672192B6AFDA100BC4F8A /* SparringApp.swift in Sources */,
+				0786725C2B7774B600BC4F8A /* tabs.swift in Sources */,
 				078672572B75B38E00BC4F8A /* ForgotPassword.swift in Sources */,
 				0786724F2B75956B00BC4F8A /* logIn.swift in Sources */,
 				078672512B75958900BC4F8A /* SignUp.swift in Sources */,

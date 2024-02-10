@@ -104,7 +104,7 @@ struct ForgotPasswordView: View {
 
 struct MainView: View {
     var body: some View {
-        UsersMainView()
+       Userpage()
             .navigationBarBackButtonHidden(true)
     }
 }
