@@ -3,10 +3,11 @@
 //  Sparring
 //
 //  Created by Ramon De Santiago on 2/8/24.
-//
 import SwiftUI
 
 struct logView: View {
+    @State private var isNavigated = false // Track navigation state
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -16,7 +17,7 @@ struct logView: View {
                     UserCredentialsForm()
                     ForgotPasswordLink()
                     LoginButton()
-                    SignButton()
+                    SignButton(isNavigated: $isNavigated) // Pass the state variable
                  }
                 .padding()
             }
@@ -70,8 +71,12 @@ struct LoginButton: View {
 }
 
 struct SignButton: View {
+    @Binding var isNavigated: Bool // Binding to track navigation state
+    
     var body: some View {
-        NavigationLink(destination: SignUpView()) {
+        NavigationLink(destination: SignUpView().onAppear {
+            self.isNavigated = true // Set the state variable to true when navigating
+        }) {
             Text("Don't have an account? ")
                 .foregroundColor(.blue)
             +
@@ -86,18 +91,21 @@ struct SignButton: View {
 struct SignUpView: View {
     var body: some View {
         SignUp()
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct ForgotPasswordView: View {
     var body: some View {
         ForgotPassword()
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct MainView: View {
     var body: some View {
         UsersMainView()
+            .navigationBarBackButtonHidden(true)
     }
 }
 

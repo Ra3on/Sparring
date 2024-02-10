@@ -4,15 +4,15 @@
 //
 //  Created by Ramon De Santiago on 2/8/24.
 import SwiftUI
- // SignUp View
+
+// SignUp View
 struct SignUp: View {
     // State properties
-    @State private var username = ""
-    @State private var password = ""
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var email = ""
-    @State private var age = ""
+    @State private var username = ""
+    @State private var password = ""
     @State private var confirmPassword = ""
     
     var body: some View {
@@ -20,28 +20,16 @@ struct SignUp: View {
             // Background color
             Color.black.opacity(0.4)
                 .edgesIgnoringSafeArea(.all)
-            
+    
             VStack(spacing: 20) {
                 // First name and last name fields
-                NameFields()
+                NameFields(firstName: $firstName, lastName: $lastName)
+                EmailField(email: $email)              // Email field
+                UsernameField(username: $username)     // Username field
                 
-                // Email field
-                SecureField("Email", text: $email)
-                    .padding()
-                    .background(Color.white.opacity(0.2))
-                    .cornerRadius(10)
-                // Username field
-                TextField("Username", text: $username)
-                    .padding()
-                    .background(Color.white.opacity(0.2))
-                    .cornerRadius(10)
-                
-                // Password and confirm password fields
-                PasswordFields()
-                // Sign up button
-                SignUpButton()
-                // Log button
-                LogButton()
+                PasswordFields(password: $password, confirmPassword: $confirmPassword)  // Password and confirm password fields
+                SignUpButton()   // Sign up button
+                LogButton()      // Log button
             }
             .padding()
             .navigationBarTitle("Sign Up")
@@ -57,8 +45,8 @@ struct SignUp: View {
 // Separate Views
 
 struct NameFields: View {
-    @State private var firstName = ""
-    @State private var lastName = ""
+    @Binding var firstName: String
+    @Binding var lastName: String
     
     var body: some View {
         HStack(spacing: 20) {
@@ -75,9 +63,31 @@ struct NameFields: View {
     }
 }
 
+struct EmailField: View {
+    @Binding var email: String
+    
+    var body: some View {
+        SecureField("Email", text: $email)
+            .padding()
+            .background(Color.white.opacity(0.2))
+            .cornerRadius(10)
+    }
+}
+
+struct UsernameField: View {
+    @Binding var username: String
+    
+    var body: some View {
+        TextField("Username", text: $username)
+            .padding()
+            .background(Color.white.opacity(0.2))
+            .cornerRadius(10)
+    }
+}
+
 struct PasswordFields: View {
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    @Binding var password: String
+    @Binding var confirmPassword: String
     
     var body: some View {
         VStack(spacing: 20) {
@@ -114,7 +124,7 @@ struct SignUpButton: View {
 
 struct LogButton: View {
     var body: some View {
-        NavigationLink(destination: logView()) {
+        NavigationLink(destination: logsView()) {
             Text("Already have an account? ")
                 .foregroundColor(.blue)
             +
@@ -123,6 +133,14 @@ struct LogButton: View {
                 .bold()
                 .underline()
         }
+    }
+}
+
+
+struct logsView: View {
+    var body: some View {
+        logView()
+            .navigationBarBackButtonHidden(true)
     }
 }
 
