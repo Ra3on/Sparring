@@ -6,26 +6,30 @@
 //
 import SwiftUI
 
-struct SwiftUIView: View {
+struct logView: View {
     var body: some View {
-        NavigationView { // Wrap the entire view in a NavigationView
+        NavigationView {
             ZStack {
                 Color.black.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 20) {
                     UserCredentialsForm()
-                    
-                    NavigationLink(destination: ForgotPasswordView()) { // Navigate to ForgotPasswordView
-                        Text("Forgot Password?")
-                            .foregroundColor(.blue)
-                    }
-                    
+                    ForgotPasswordLink()
                     LoginButton()
-                    
                     SignButton()
-                }
+                 }
                 .padding()
             }
+            .navigationBarTitle("Log In", displayMode: .inline)
+        }
+    }
+}
+
+struct ForgotPasswordLink: View {
+    var body: some View {
+        NavigationLink(destination: ForgotPasswordView()) {
+            Text("Forgot Password?")
+                .foregroundColor(.blue)
         }
     }
 }
@@ -41,7 +45,6 @@ struct UserCredentialsForm: View {
                 .padding()
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(20)
-            
             SecureField("Password", text: $password)
                 .padding()
                 .background(Color.white.opacity(0.2))
@@ -52,7 +55,7 @@ struct UserCredentialsForm: View {
 
 struct LoginButton: View {
     var body: some View {
-        NavigationLink(destination: MainView()) { // Navigate to your main view after login
+        NavigationLink(destination: MainView()) {
             Text("Login")
                 .font(.title)
                 .fontWeight(.bold)
@@ -88,18 +91,18 @@ struct SignUpView: View {
 
 struct ForgotPasswordView: View {
     var body: some View {
-        Text("Forgot Password View") // Your forgot password screen content goes here
+        ForgotPassword()
     }
 }
 
 struct MainView: View {
     var body: some View {
-       MaiView()
+        UsersMainView()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView()
+        logView()
     }
 }

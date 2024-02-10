@@ -17,7 +17,8 @@
 		078672382B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672372B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift */; };
 		0786724F2B75956B00BC4F8A /* logIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0786724E2B75956B00BC4F8A /* logIn.swift */; };
 		078672512B75958900BC4F8A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672502B75958900BC4F8A /* SignUp.swift */; };
-		078672552B7596AA00BC4F8A /* MaiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672542B7596AA00BC4F8A /* MaiView.swift */; };
+		078672552B7596AA00BC4F8A /* UsersMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672542B7596AA00BC4F8A /* UsersMainView.swift */; };
+		078672572B75B38E00BC4F8A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078672562B75B38E00BC4F8A /* ForgotPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,8 @@
 		078672372B6AFDA700BC4F8A /* SparringUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparringUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0786724E2B75956B00BC4F8A /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
 		078672502B75958900BC4F8A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		078672542B7596AA00BC4F8A /* MaiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaiView.swift; sourceTree = "<group>"; };
+		078672542B7596AA00BC4F8A /* UsersMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMainView.swift; sourceTree = "<group>"; };
+		078672562B75B38E00BC4F8A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				078672502B75958900BC4F8A /* SignUp.swift */,
 				0786724E2B75956B00BC4F8A /* logIn.swift */,
+				078672562B75B38E00BC4F8A /* ForgotPassword.swift */,
 			);
 			path = "Sign&log";
 			sourceTree = "<group>";
@@ -150,7 +153,7 @@
 		078672532B75963000BC4F8A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				078672542B7596AA00BC4F8A /* MaiView.swift */,
+				078672542B7596AA00BC4F8A /* UsersMainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -286,9 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0786721B2B6AFDA100BC4F8A /* ContentView.swift in Sources */,
-				078672552B7596AA00BC4F8A /* MaiView.swift in Sources */,
+				078672552B7596AA00BC4F8A /* UsersMainView.swift in Sources */,
 				0786721D2B6AFDA100BC4F8A /* Item.swift in Sources */,
 				078672192B6AFDA100BC4F8A /* SparringApp.swift in Sources */,
+				078672572B75B38E00BC4F8A /* ForgotPassword.swift in Sources */,
 				0786724F2B75956B00BC4F8A /* logIn.swift in Sources */,
 				078672512B75958900BC4F8A /* SignUp.swift in Sources */,
 			);
