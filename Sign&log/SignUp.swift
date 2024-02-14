@@ -4,6 +4,7 @@
 //
 //  Created by Ramon De Santiago on 2/8/24.
 import SwiftUI
+import Firebase
 
 // SignUp View
 struct SignUp: View {
@@ -14,6 +15,8 @@ struct SignUp: View {
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @EnvironmentObject var viewModel: ViewModel
+    
     
     var body: some View {
         ZStack {
@@ -28,7 +31,7 @@ struct SignUp: View {
                 UsernameField(username: $username)     // Username field
                 
                 PasswordFields(password: $password, confirmPassword: $confirmPassword)  // Password and confirm password fields
-                SignUpButton()   // Sign up button
+                SignUpButton(firstName: $firstName, lastName: $lastName, email: $email, username: $username,password: $password )   // Sign up button
                 LogButton()      // Log button
             }
             .padding()
@@ -88,6 +91,7 @@ struct UsernameField: View {
 struct PasswordFields: View {
     @Binding var password: String
     @Binding var confirmPassword: String
+    @State private var passwordsMatch = true // State variable to track password match status
     
     var body: some View {
         VStack(spacing: 20) {
@@ -95,19 +99,35 @@ struct PasswordFields: View {
                 .padding()
                 .background(Color.white.opacity(0.2))
                 .cornerRadius(10)
-
-            SecureField("Confirm Password", text: $confirmPassword)
-                .padding()
-                .background(Color.white.opacity(0.2))
-                .cornerRadius(10)
+            
+            SecureField("Confirm Password", text: $confirmPassword, onCommit: {
+                // Check if passwords match when user presses return/done
+                passwordsMatch = password == confirmPassword
+            })
+            .padding()
+            .background(Color.white.opacity(0.2))
+            .cornerRadius(10)
+            
+            // Error message if passwords don't match
+            if !passwordsMatch {
+                Text("Passwords do not match")
+                    .foregroundColor(.red)
+                    .font(.caption)
+            }
         }
     }
 }
-
 struct SignUpButton: View {
+    @Binding var firstName: String
+    @Binding var lastName: String
+    @Binding var email: String
+    @Binding var username: String
+    @Binding var password: String
+    @EnvironmentObject var viewModel: ViewModel
+    
     var body: some View {
         Button(action: {
-            // Call sign-up function
+            signUp() // Call the signUp function when the button is tapped
         }) {
             Text("Sign Up")
                 .font(.title)
@@ -118,6 +138,15 @@ struct SignUpButton: View {
                 .background(Color(.black.opacity(0.8)))
                 .cornerRadius(20)
                 .padding(.vertical)
+        }
+    }
+    
+    func signUp() {
+        Task {
+           
+            try await viewModel.createUser (withEmail: email, lastname: lastName, Firstname: firstName, Username: username, Password: password)
+                // Handle successful sign-up (if needed)
+             
         }
     }
 }

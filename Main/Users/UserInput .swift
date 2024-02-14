@@ -84,9 +84,7 @@ struct LevelInput: View {
     var body: some View {
         VStack {
             Picker("Level", selection: $level) { // Bind directly to level here
-                ForEach(0..<levels.count) { index in
-                    Text(levels[index])
-                }
+               
             }
             .pickerStyle(WheelPickerStyle())
             .labelsHidden()

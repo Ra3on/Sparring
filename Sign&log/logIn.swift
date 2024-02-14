@@ -4,9 +4,14 @@
 //
 //  Created by Ramon De Santiago on 2/8/24.
 import SwiftUI
-
+import Firebase
 struct logView: View {
     @State private var isNavigated = false // Track navigation state
+    @State private var username = ""
+    @State private var password = ""
+    
+  
+    
     
     var body: some View {
         NavigationView {
@@ -14,9 +19,9 @@ struct logView: View {
                 Color.black.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 20) {
-                    UserCredentialsForm()
+                    UserCredentialsForm(username: $username, password: $password)
                     ForgotPasswordLink()
-                    LoginButton()
+                    LoginButton(username: $username, password: $password)
                     SignButton(isNavigated: $isNavigated) // Pass the state variable
                  }
                 .padding()
@@ -36,8 +41,8 @@ struct ForgotPasswordLink: View {
 }
 
 struct UserCredentialsForm: View {
-    @State private var username = ""
-    @State private var password = ""
+    @Binding var username: String
+    @Binding var password: String // Changed to String
     
     var body: some View {
         VStack(spacing: 20) {
@@ -54,7 +59,7 @@ struct UserCredentialsForm: View {
     }
 }
 
-struct LoginButton: View {
+
     var body: some View {
         NavigationLink(destination: MainView()) {
             Text("Login")
@@ -68,12 +73,46 @@ struct LoginButton: View {
                 .padding(.vertical)
         }
     }
+
+struct LoginButton: View {
+    @EnvironmentObject var viewModel: ViewModel // Inject the ViewModel
+    @State private var showAlert = false // State variable to show an alert
+    
+    @Binding var username: String
+    @Binding var password: String // Changed to String
+    
+    var body: some View {
+        Button(action: {
+            // Perform signing in action when button is tapped
+            Task {
+                
+                do {
+                                   try await viewModel.signIn(withUser: username, password: password)
+                               } catch {
+                                   // Show alert or handle error if needed
+                                   print("Error: \(error)")
+                               }
+            }
+        }) {
+            Text("Login")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.white)
+                .background(Color(.black.opacity(0.8)))
+                .cornerRadius(20)
+                .padding(.vertical)
+        }
+    }
 }
+
 
 struct SignButton: View {
     @Binding var isNavigated: Bool // Binding to track navigation state
     
     var body: some View {
+        
         NavigationLink(destination: SignUpView().onAppear {
             self.isNavigated = true // Set the state variable to true when navigating
         }) {
@@ -104,12 +143,13 @@ struct ForgotPasswordView: View {
 
 struct MainView: View {
     var body: some View {
+       
        Userpage()
             .navigationBarBackButtonHidden(true)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct logView_Previews: PreviewProvider {
     static var previews: some View {
         logView()
     }
