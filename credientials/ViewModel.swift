@@ -6,10 +6,14 @@
 //
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class ViewModel: ObservableObject {
-    @Published var userSession: FirebaseAuth.User?
+    
     @Published var currentUser: User?
+    @Published var email = ""
+    @Published var password = ""
+    
     
     init() {
         // Initialization code here if needed
@@ -21,7 +25,7 @@ class ViewModel: ObservableObject {
         // Sign-in logic here
     }
     
-    func createUser(withEmail email: String, lastname: String, Firstname: String, Username : String,Password: String) async throws {
+    func createUser(withEmail: String, lastname: String, Firstname: String, Username : String,Password: String) async throws {
         print("no")
         // Create user logic here
     }

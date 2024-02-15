@@ -8,20 +8,15 @@
 import SwiftUI
 import SwiftData
 import Firebase
-struct ContentView: View{
-    @EnvironmentObject var viewModel: ViewModel
-    var body: some View{
-        Group {
-            if $viewModel.userSession != nil {
-                
-                Userpage()
-            } else{
-                logView()
-                
-            }
-        }
+
+struct ContentView: View {
+    @EnvironmentObject var viewModel: ViewModel // Inject ViewModel
+    
+    var body: some View {
+        logView(showSignInView: .constant(false))  // Assuming logView is the initial view you're presenting
     }
 }
+
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()

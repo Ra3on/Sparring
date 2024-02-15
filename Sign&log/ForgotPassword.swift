@@ -92,7 +92,7 @@ struct CancelButton: View {
 
 struct EView: View {
     var body: some View {
-        logView()
+        logView(showSignInView: .constant(false)) 
             .navigationBarBackButtonHidden(true) // Hide the back button
     }
 }

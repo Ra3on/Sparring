@@ -168,7 +168,7 @@ struct LogButton: View {
 
 struct logsView: View {
     var body: some View {
-        logView()
+        logView(showSignInView: .constant(false)) 
             .navigationBarBackButtonHidden(true)
     }
 }
